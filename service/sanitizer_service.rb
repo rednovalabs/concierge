@@ -1,0 +1,3 @@
+def SanitizerService < Service
+
+end

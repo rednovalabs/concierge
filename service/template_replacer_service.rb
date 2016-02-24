@@ -1,0 +1,3 @@
+class TemplateReplacerService < Service
+
+end

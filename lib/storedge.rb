@@ -1,3 +1,0 @@
-class StoredgeAPI
-  #todo
-end

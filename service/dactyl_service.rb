@@ -1,4 +1,4 @@
-class Dactyl
+class DactylService < Service
 
   METRICS_WE_WANT_TO_ANALYZE = [
     'sentiment',

@@ -23,6 +23,8 @@ class Chatbot
   end
 
   def listen_for_messages!
+    #todo might need to spin up a server instead if twilio needs a callback url
+    # for posting messages
     loop do
       debug "Checking for messages..."
 
