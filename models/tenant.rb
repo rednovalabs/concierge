@@ -1,7 +1,6 @@
 class Tenant
-  def initialize
-    # Overriding for demo -- just use sample tenant instead of loading from API
-    self = Tenant.sample_tenant
+  def self.new
+    Tenant.sample_tenant
   end
 
   # Define a sample tenant record so we don't need to muck with API calls for demo
