@@ -5,37 +5,19 @@ class StoredgeService < Service
 
   # [[tenant.name]] ~> "Dan Miller"
   def self.replacement_for token
-    naked_token = strip_brackets token
-    context, attribute = parse_context_and_attribute naked_token
+    context, attribute = TemplateReplacerService.fetch_context_and_attribute token
 
-    fetch_data context, attribute
-  end
-
-  private
-
-  # [[tenant.name]] ~> tenant.name
-  def self.strip_brackets token
-    token = token
-      .sub(/^\[\[/, '')
-      .sub(/\]\]$/, '')
-  end
-
-  # tenant.name ~> [tenant, name]
-  def self.parse_context_and_attribute naked_token
-    #todo maybe handle singular attributes, e.g. [[day_of_week]]
-    #todo maybe handle nested attributes, e.g. [[tenant.mom.phone_number]]
-    token.split '.'
-  end
-
-  # [tenant, name] ~> "Dan Miller"
-  def fetch_data context, attribute
-    context_object(context).send(attribute)
+    context_object = build_context_object context
+    context_object[attribute]
   rescue
     nil
   end
 
+  private
+
   # tenant ~> Tenant (object)
-  def self.context_object context, initialization_params = nil
+  def build_context_object context, initialization_params = nil
+    # Create Tenant object for demo, but would otherwise fetch API resource
     context.constantize.new initialization_params
   rescue
     nil
