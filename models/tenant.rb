@@ -1,12 +1,7 @@
 class Tenant
   def initialize
-  end
-
-  # overriding this method to look at sample tenant data for demo
-  def get attribute
-    Tenant.sample_tenant[attribute.to_sym]
-  rescue
-    nil
+    # Overriding for demo -- just use sample tenant instead of loading from API
+    self = Tenant.sample_tenant
   end
 
   # Define a sample tenant record so we don't need to muck with API calls for demo
