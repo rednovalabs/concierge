@@ -1,0 +1,3 @@
+class StoredgeAPI
+  #todo
+end
