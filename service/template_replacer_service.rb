@@ -1,8 +1,19 @@
 class TemplateReplacerService < Service
 
+  # Regex to determine whether a word is in template replacement format
+  # e.g. [[tenant.name]] or [[day_of_week]]
+  TOKEN_REGEX = /(\[\[[^\]]+\]\])/
+
+  # Replace all tokens in a template with their storEDGE data
   def self.replace_replacements template
-    template.gsub '[[tenant.name]]', 'Dan Miller'
-    #todo
+    #todo this split doesn't work for appended punctuation like [[token]].
+    template.split(' ').collect do |word|
+      if is_token?(word)
+        StoredgeService.replacement_for token
+      else
+        token
+      end
+    end.join ' '
   end
 
   def self.fetch_context_and_attribute token
@@ -26,11 +37,8 @@ class TemplateReplacerService < Service
     token.split '.'
   end
 
-  # "tenant" ~> Tenant (object)
-  def self.context_object context, initialization_params = nil
-    context.constantize.new initialization_params
-  rescue
-    nil
+  def self.is_token? potential_token
+    !(TOKEN_REGEX =~ potential_token).nil?
   end
 
 end
