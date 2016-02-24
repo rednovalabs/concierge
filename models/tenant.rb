@@ -1,5 +1,5 @@
 class Tenant
-  def self.new
+  def self.new *_
     Tenant.sample_tenant
   end
 

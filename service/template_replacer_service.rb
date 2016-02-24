@@ -6,20 +6,16 @@ class TemplateReplacerService < Service
 
   # Replace all tokens in a template with their storEDGE data
   def self.replace_replacements template
-    #todo this split doesn't work for appended punctuation like [[token]].
-    template.split(' ').collect do |word|
-      if is_token?(word)
-        replacement = StoredgeService.replacement_for word
-        puts "Replacing: #{word} --> #{replacement}"
-      else
-        word
-      end
-    end.join ' '
+    template.gsub(TOKEN_REGEX) do |token|
+      replacement = StoredgeService.replacement_for token
+      puts "Replacing: #{token} --> #{replacement}"
+      replacement
+    end
   end
 
   def self.fetch_context_and_attribute token
-      naked_token = strip_brackets token
-      context, attribute = parse_context_and_attribute naked_token
+    naked_token = strip_brackets token
+    context, attribute = parse_context_and_attribute(naked_token)
   end
 
   private
@@ -35,7 +31,7 @@ class TemplateReplacerService < Service
   def self.parse_context_and_attribute naked_token
     #todo maybe handle singular attributes, e.g. [[day_of_week]]
     #todo maybe handle nested attributes, e.g. [[tenant.mom.phone_number]]
-    token.split '.'
+    naked_token.split '.'
   end
 
   def self.is_token? potential_token
