@@ -1,6 +1,7 @@
 require_relative 'lib/chatbot'
 
-require_relative 'service/bootstrap'
+require_relative 'service/service'   # core service object
+require_relative 'service/bootstrap' # all service derivatives
 
 require_relative 'models/bootstrap'
 

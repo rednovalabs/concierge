@@ -1,7 +1,6 @@
 require 'action_view'
 
 require_relative 'twilio' # for sms sending/receiving
-require_relative 'dactyl' # for sentiment analysis
 
 class Chatbot
   include Twilio
