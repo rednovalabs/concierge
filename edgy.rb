@@ -15,7 +15,11 @@ edgy = Chatbot.new.tap do |bot|
     puts "Responding to: #{message}"
 
     response_template  = KeywordMatcherService.match_to_template message
+    puts "Response template: #{response_template}"
+
     replaced_response  = TemplateReplacerService.replace_replacements response_template
+    puts "Replaced response: #{replaced_response}"
+
     sanitized_response = SanitizerService.sanitize_for_sms replaced_response
 
     puts "Response generated: #{sanitized_response}"

@@ -9,7 +9,8 @@ class TemplateReplacerService < Service
     #todo this split doesn't work for appended punctuation like [[token]].
     template.split(' ').collect do |word|
       if is_token?(word)
-        StoredgeService.replacement_for word
+        replacement = StoredgeService.replacement_for word
+        puts "Replacing: #{word} --> #{replacement}"
       else
         word
       end
