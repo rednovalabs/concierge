@@ -1,11 +1,12 @@
 require 'sinatra'
+require 'twilio-ruby'
 
-require_relative 'lib/chatbot'
+#require_relative 'lib/chatbot'
 
-require_relative 'service/service'   # core service object
-require_relative 'service/bootstrap' # all service derivatives
+#require_relative 'service/service'   # core service object
+#require_relative 'service/bootstrap' # all service derivatives
 
-require_relative 'models/bootstrap'
+#require_relative 'models/bootstrap'
 
 TWILIO_ACCOUNT_SID = ENV['TWILIO_ACCOUNT_SID']
 TWILIO_AUTH_TOKEN  = ENV['TWILIO_AUTH_TOKEN']
@@ -20,7 +21,7 @@ post '/receive_sms' do
   content_type 'text/xml'
 
   response = Twilio::TwiML::Response.new do |response|
-    response.Message = 'Hey, thanks for messaging me.'
+    response.Message "Hey, thanks for messaging me #{params['Body']}"
   end
 
   response.to_xml
