@@ -5,6 +5,20 @@
     "enabled": true,
     "context_restriction": null,
     "set_context": null
-  }
+  },
+  {
+    "trigger": "How old are you?",
+    "template": "Something clever!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "What's your name?",
+    "template": "My name is [[bot.name]]. Pleased to meet you!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
 
 ]
