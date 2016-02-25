@@ -14,7 +14,7 @@ module Twilio
 
     puts "Sending #{message} to #{number}"
     @twilio_client.account.messages.create({
-      from: Bot.new[:phone],
+      from: Bot.new[:twilio_phone],
       to:   number,
       body: message
     })

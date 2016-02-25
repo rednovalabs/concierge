@@ -3,7 +3,8 @@ class Bot
     {
       name: "Edgy",
       phone: "(484) 999-EDGY",
-      email: "abrown+chatbot@rednovalabs.com",
+      twilio_phone: "+14849993349",
+      email: "abrown+chatbot@rednovalabs.com"
     }
   end
 end

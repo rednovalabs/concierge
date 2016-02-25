@@ -36,6 +36,23 @@ get '/' do
   "Hello, my name is #{Bot.new[:name]}!"
 end
 
+get '/welcome' do
+  content_type 'text/html'
+
+  return "No ?phone param" unless params.key? 'phone'
+
+  welcome_template = [
+    "Welcome to [[facility.name]], [[tenant.first_name]]!",
+    "I'm [[bot.name]] and I'm here to help you --",
+    "just text me any time with any questions you have,",
+    "and I'll do my best to answer you!"
+  ].join ' '
+  replaced_template = TemplateReplacerService.replace_replacements welcome_template
+  sanitized_response = SanitizerService.sanitize_for_sms replaced_template
+
+  edgy.send_twilio_message sanitized_response, params['phone']
+end
+
 post '/receive_sms' do
   content_type 'text/xml'
 
