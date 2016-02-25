@@ -13,7 +13,7 @@ class KeywordMatcherService < Service
     end
 
     # Catchall template
-    "This is a template for [[tenant.first_name]]!"
+    "Sorry [[tenant.first_name]], but I don't know how to respond to that!"
   end
 
   private

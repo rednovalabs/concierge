@@ -5,8 +5,8 @@ require_relative 'service/bootstrap' # all service derivatives
 
 require_relative 'models/bootstrap'
 
-TWILIO_ACCOUNT_SID = 'foo'
-TWILIO_AUTH_TOKEN  = 'bar'
+TWILIO_ACCOUNT_SID = ENV['TWILIO_ACCOUNT_SID']
+TWILIO_AUTH_TOKEN  = ENV['TWILIO_AUTH_TOKEN']
 
 edgy = Chatbot.new.tap do |bot|
   bot.set_twilio_credentials TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN

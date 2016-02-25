@@ -41,12 +41,12 @@ class Chatbot
   def respond_to message
     debug "Responding to '#{message}'"
 
-    responses = @handlers[:message].collect do |handler|
-      handler.call(message)
-    end.compact
+    response = @handlers[:message].collect do |handler|
+      handler.call(message[:body])
+    end.compact.join ' | '
 
-    debug "Found #{responses.count} responses: #{responses}"
-    send_twilio_message responses.join(' | ')
+    debug "Responding with: #{response}"
+    send_twilio_message response, message[:from]
   end
 
   # Store proc blocks to run on named hooks
