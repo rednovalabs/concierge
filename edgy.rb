@@ -39,6 +39,8 @@ end
 post '/receive_sms' do
   content_type 'text/xml'
 
+  puts "Receieved SMS from #{params['From']}: #{params['Body']}"
+
   response = Twilio::TwiML::Response.new do |response|
     response.Message edgy.response_for({
       from: params['From'],
