@@ -1,4 +1,5 @@
 class Tenant
+  # Override Tenant.new for the demo so we don't need to instantiate one from the API
   def self.new *_
     Tenant.sample_tenant
   end

@@ -8,7 +8,7 @@ module Twilio
   end
 
   def get_twilio_messages
-    ["yo", "sup"]
+    ["yo", "sup", "I am your father"]
 
     #todo
   end
