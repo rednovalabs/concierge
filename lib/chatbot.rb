@@ -1,10 +1,7 @@
-require 'action_view'
-
 require_relative 'twilio' # for sms sending/receiving
 
 class Chatbot
   include Twilio
-  include ActionView::Helpers::TextHelper # for pluralize(n, m)
 
   # Seconds between queries to Twilio to look for new messages
   SNOOZE_SECONDS = 5
@@ -29,7 +26,7 @@ class Chatbot
 
       messages = get_twilio_messages
       if messages.any?
-        debug "Found #{pluralize(messages.count, 'message')}."
+        debug "Found #{messages.count} message(s)."
         messages.each { |message| respond_to message }
       end
 

@@ -10,6 +10,12 @@ require_relative 'models/bootstrap'
 TWILIO_ACCOUNT_SID = ENV['TWILIO_ACCOUNT_SID']
 TWILIO_AUTH_TOKEN  = ENV['TWILIO_AUTH_TOKEN']
 
+get '/' do
+  content_type 'text/html'
+
+  "Hello!"
+end
+
 post '/receive_sms' do
   content_type 'text/xml'
 
