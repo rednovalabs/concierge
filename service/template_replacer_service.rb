@@ -4,13 +4,15 @@ class TemplateReplacerService < Service
   # e.g. [[tenant.name]] or [[day_of_week]]
   TOKEN_REGEX = /(\[\[[^\]]+\]\])/
 
+  # Regex to find symbolic reductions
+  SRAI_REGEX = /<<([^>]+)>>/
+
   # Replace all tokens in a template with their storEDGE data
   def self.replace_replacements template
-    template.gsub(TOKEN_REGEX) do |token|
-      replacement = StoredgeService.replacement_for token
-      puts "Replacing: #{token} --> #{replacement}"
-      replacement
-    end
+    template = perform_template_replacements template
+    template = perform_symbolic_reductions   template
+
+    template
   end
 
   def self.fetch_context_and_attribute token
@@ -19,6 +21,24 @@ class TemplateReplacerService < Service
   end
 
   private
+
+  def self.perform_template_replacements template
+    template.gsub(TOKEN_REGEX) do |token|
+      replacement = StoredgeService.replacement_for token
+      puts "Replacing: #{token} --> #{replacement}"
+      replacement
+    end
+  end
+
+  def self.perform_symbolic_reductions template
+    template.gsub(SRAI_REGEX) do |srai|
+      reduction_template = KeywordMatcherService.match_to_template srai
+      replaced_template = TemplateReplacerService.replace_replacements reduction_template
+
+      puts "Recursing: #{srai} --> #{replaced_template}"
+      replaced_template
+    end
+  end
 
   # [[tenant.name]] ~> "tenant.name"
   def self.strip_brackets token

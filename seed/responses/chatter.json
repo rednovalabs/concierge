@@ -7,6 +7,13 @@
     "set_context": null
   },
   {
+    "trigger": "hello",
+    "template": "<<hi>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": "how old are you",
     "template": "Something clever!",
     "enabled": true,
