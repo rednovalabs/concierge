@@ -72,16 +72,32 @@ get '/help' do
   content_type 'text/html'
 
   triggers_and_templates = KeywordMatcherService.triggers_and_templates.sort_by { |r| r["enabled"] ? 0 : 1 }
-  responses = triggers_and_templates.collect do |response|
-    response = response.dup
 
-    response["trigger"] = "<strong>/</strong>#{response['trigger']}<strong>/</strong>"
-    response["template"] = response["template"].gsub(TemplateReplacerService::TOKEN_REGEX) do |token|
-      "<span style='color: #5ac74e'>#{token}</span>"
-    end
+  erb :help, locals: { triggers_and_templates: triggers_and_templates }
+end
 
-    response
+post '/update_script' do
+  content_type 'text/html'
+
+  puts params.inspect
+
+  # Find the response being edited
+  response = KeywordMatcherService.triggers_and_templates.detect do |r|
+    %w(trigger template).all? { |x| r[x] == params[x]}
   end
 
-  erb :help, locals: { triggers_and_templates: responses }
+  puts "Found response: #{response}"
+
+  # And edit it
+  if response
+    response["template"] = params["new_template"]
+    redirect to('/help')
+  else
+    "Error"
+  end
+end
+
+get '/reset_all_templates' do
+  KeywordMatcherService.triggers_and_templates reload: true
+  redirect to('/help')
 end
