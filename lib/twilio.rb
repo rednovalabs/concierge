@@ -8,16 +8,7 @@ module Twilio
     @twilio_client      = Twilio::REST::Client.new account_sid, auth_token
   end
 
-  def get_twilio_messages
-    [
-      {
-        from: '+14174561575',
-        body: 'yo'
-      }
-    ]
-    #todo
-  end
-
+  # Send twilio message without an incoming message
   def send_twilio_message message, number
     raise "Unable to send Twilio message without setting Twilio credentials" unless @twilio_client
 

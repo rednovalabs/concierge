@@ -21,8 +21,8 @@ class StoredgeService < Service
   # tenant ~> Tenant (object)
   def self.build_context_object context, initialization_params = nil
     # Create Tenant object for demo, but would otherwise fetch API resource
-    puts "Creating context object for #{context.camelize}"
-    context.camelize.constantize.new initialization_params
+    puts "Creating context object for #{context.capitalize}"
+    Module.const_get(context.capitalize).new initialization_params
   #rescue
   #  nil
   end
