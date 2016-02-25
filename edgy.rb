@@ -71,6 +71,14 @@ end
 get '/help' do
   content_type 'text/html'
 
-  regexes = KeywordMatcherService.triggers_and_templates.map { |r| "/#{r["trigger"]}/i --> #{r["template"]}" }
-  ["I respond to the following regex matches: <hr />"] << regexes.join("<br />")
+  triggers_and_templates = KeywordMatcherService.triggers_and_templates
+
+  response_table = [
+    "<table border='1'><tr>" + %w(Trigger Template Context Restriction).map { |h| "<th>#{h}</th>" }.join + "</tr>"
+  ]
+  triggers_and_templates.each do |response|
+    response_table << "<tr>" + %w(trigger template context_restriction set_context).map { |a| "<td>#{response[a]}</td>" }.join + "</tr>"
+  end
+
+  response_table.join
 end
