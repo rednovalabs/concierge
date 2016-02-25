@@ -7,8 +7,8 @@
     "set_context": null
   },
   {
-    "trigger": "what units am I in",
-    "template": "You're in unit [[tenant.unit_name]]",
+    "trigger": "what units?",
+    "template": "You're in unit [[tenant.unit_name]].",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -16,6 +16,48 @@
   {
     "trigger": "my gate code",
     "template": "Your gate code is [[tenant.gate_code]].",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "\\bwhat\\b.+\\bbalance\\b",
+    "template": "Your current balance due is [[tenant.balance_due]]. <<when is balance due>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": "next payment"
+  },
+  {
+    "trigger": "how much",
+    "template": "<<what is my balance>>",
+    "enabled": false,
+    "context_restriction": "next payment",
+    "set_context": null
+  },
+  {
+    "trigger": "\\bwhen\\b.+\\bbalance\\b",
+    "template": "Your next payment is due on [[tenant.balance_due_on]].",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": "next payment"
+  },
+  {
+    "trigger": "\\bhow much\\b.+\\bowe",
+    "template": "<<what is my balance>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "\\bhow much\\b.+\\bpay",
+    "template": "<<what is my balance>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "\\bwhen\\b.+\\bpay",
+    "template": "<<when is my balance due>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null

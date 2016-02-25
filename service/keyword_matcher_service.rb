@@ -1,19 +1,25 @@
 class KeywordMatcherService < Service
 
   def self.match_to_template message
+    full_template = ""
+
     triggers_and_templates.each do |response|
       next unless response["enabled"]
 
       trigger_regex = regex_trigger_for response["trigger"]
-      puts "Matching [#{message}] to [#{trigger_regex}]"
+      #puts "Matching [#{message}] to [#{trigger_regex}]"
       if !(message.downcase =~ trigger_regex).nil?
-        puts "Found valid trigger! Using template: #{response['template']}"
-        return response["template"]
+        #puts "Found valid trigger! Using template: #{response['template']}"
+        full_template << response["template"] + ' '
       end
     end
 
-    # Catchall template
-    "Sorry [[tenant.first_name]], but I don't know how to respond to that!"
+    if full_template.empty?
+      # Catchall template
+      "Sorry [[tenant.first_name]], but I don't know how to respond to that!"
+    else
+      full_template
+    end
   end
 
   def self.triggers_and_templates reload: false

@@ -4,7 +4,7 @@ class Chatbot
   include Twilio
 
   # Whether or not to print debug output to console
-  DEBUG_OUTPUT = true
+  DEBUG_OUTPUT = false
 
   def initialize
     @handlers = {}
@@ -15,7 +15,7 @@ class Chatbot
 
     response = @handlers[:message].collect do |handler|
       handler.call(message[:body])
-    end.compact.join ' | '
+    end.compact.join ''
 
     debug "Responding with: #{response}"
     response

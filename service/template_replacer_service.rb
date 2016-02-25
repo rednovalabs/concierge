@@ -25,7 +25,7 @@ class TemplateReplacerService < Service
   def self.perform_template_replacements template
     template.gsub(TOKEN_REGEX) do |token|
       replacement = StoredgeService.replacement_for token
-      puts "Replacing: #{token} --> #{replacement}"
+      #puts "Replacing: #{token} --> #{replacement}"
       replacement
     end
   end
@@ -35,7 +35,7 @@ class TemplateReplacerService < Service
       reduction_template = KeywordMatcherService.match_to_template srai
       replaced_template = TemplateReplacerService.replace_replacements reduction_template
 
-      puts "Recursing: #{srai} --> #{replaced_template}"
+      #puts "Recursing: #{srai} --> #{replaced_template}"
       replaced_template
     end
   end

@@ -5,6 +5,12 @@
     "enabled": true,
     "context_restriction": null,
     "set_context": null
+  },
+  {
+    "trigger": "can I pay by",
+    "template": "We can take payments in person at [[facility.address]], on the phone at [[facility.phone]], or online.",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
   }
-
 ]

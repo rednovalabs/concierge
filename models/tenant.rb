@@ -17,7 +17,9 @@ class Tenant
       username: "dmiller",
       company_id: 1,
       unit_name: 'B52',
-      gate_code: '7201'
+      gate_code: '7201',
+      balance_due: '$79.24',
+      balance_due_on: '3/1/16'
     }
   end
 end

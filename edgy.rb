@@ -15,17 +15,17 @@ edgy = Chatbot.new.tap do |bot|
   bot.set_twilio_credentials TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
 
   bot.on :message do |message|
-    puts "Responding to: #{message}"
+    #puts "Responding to: #{message}"
 
     response_template  = KeywordMatcherService.match_to_template message
-    puts "Response template: #{response_template}"
+    #puts "Response template: #{response_template}"
 
     replaced_response  = TemplateReplacerService.replace_replacements response_template
-    puts "Replaced response: #{replaced_response}"
+    #puts "Replaced response: #{replaced_response}"
 
     sanitized_response = SanitizerService.sanitize_for_sms replaced_response
 
-    puts "Response generated: #{sanitized_response}"
+    #puts "Response generated: #{sanitized_response}"
     sanitized_response
   end
 end
@@ -56,13 +56,14 @@ end
 post '/receive_sms' do
   content_type 'text/xml'
 
+  response_from_edgy = edgy.response_for({ from: params['From'], body: params['Body'] })
+
+  puts "\n-----"
   puts "Received SMS from #{params['From']}: #{params['Body']}"
+  puts "Responding: #{response_from_edgy}"
 
   response = Twilio::TwiML::Response.new do |response|
-    response.Message edgy.response_for({
-      from: params['From'],
-      body: params['Body']
-    })
+    response.Message response_from_edgy
   end
 
   response.to_xml
@@ -81,13 +82,13 @@ post '/update_script' do
 
   # Find the response being edited
   response = KeywordMatcherService.triggers_and_templates.detect do |r|
-    %w(trigger template).all? { |x| r[x] == params[x]}
+    %w(trigger template).all? { |x| r[x] == params[x] }
   end
 
   # And edit it
   if response
     response["template"] = params["new_template"]
-    redirect to('/help')
+    redirect to('/customize')
   else
     "Error"
   end
@@ -95,5 +96,5 @@ end
 
 get '/reset_all_templates' do
   KeywordMatcherService.triggers_and_templates reload: true
-  redirect to('/help')
+  redirect to('/customize')
 end

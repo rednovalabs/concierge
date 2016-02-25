@@ -7,6 +7,13 @@
     "set_context": null
   },
   {
+    "trigger": "can you answer",
+    "template": "<<what can you do>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": "help",
     "template": "<<what's your name>><<what can you do>>",
     "enabled": true,

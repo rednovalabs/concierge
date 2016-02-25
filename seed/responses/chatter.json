@@ -1,6 +1,6 @@
 [
   {
-    "trigger": "hi",
+    "trigger": "\\bhi\\b",
     "template": "Hey [[tenant.first_name]]!",
     "enabled": true,
     "context_restriction": null,
@@ -14,14 +14,21 @@
     "set_context": null
   },
   {
-    "trigger": "yo",
+    "trigger": "\\byo\\b",
     "template": "<<hi>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
-    "trigger": "sup",
+    "trigger": "\\bsup\\b",
+    "template": "<<hi>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "\\bhey\\b",
     "template": "<<hi>>",
     "enabled": true,
     "context_restriction": null,
@@ -51,6 +58,13 @@
   {
     "trigger": "thank you",
     "template": "<<thanks>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "\bgame",
+    "template": "I don't know many games, but I'm really good at hide and seek!",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
