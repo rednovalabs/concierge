@@ -56,7 +56,7 @@ end
 post '/receive_sms' do
   content_type 'text/xml'
 
-  puts "Receieved SMS from #{params['From']}: #{params['Body']}"
+  puts "Received SMS from #{params['From']}: #{params['Body']}"
 
   response = Twilio::TwiML::Response.new do |response|
     response.Message edgy.response_for({
@@ -71,10 +71,16 @@ end
 get '/help' do
   content_type 'text/html'
 
+  triggers_and_templates = KeywordMatcherService.triggers_and_templates
+
   response_table = [
-    "<table border='1' width='100%'><tr>" + %w(Trigger Template Context Restriction Enabled?).map { |h| "<th>#{h}</th>" }.join + "</tr>"
+    "<table border='1' width='100%'><tr>" + %w(Trigger Template SetContext Restriction Enabled?).map { |h| "<th>#{h}</th>" }.join + "</tr>"
   ]
-  KeywordMatcherService.triggers_and_templates.each do |response|
+  triggers_and_templates.each do |response|
+    response = response.dup # Don't modify the original response objects
+    response["trigger"] = "<strong>/</strong>#{response['trigger']}<strong>/</strong>"
+    response["template"].gsub!(TemplateReplacerService::TOKEN_REGEX) { |token| "<span style='color: #5ac74e'>#{token}</span>" }
+
     response_table << "<tr>" + %w(trigger template context_restriction set_context enabled).map { |a| "<td>#{response[a]}</td>" }.join + "</tr>"
   end
 
