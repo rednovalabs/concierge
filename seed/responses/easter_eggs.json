@@ -12,6 +12,13 @@
     "enabled": true,
     "context_restriction": null,
     "set_context": null
+  },
+  {
+    "trigger": ".*",
+    "template": "This should *never* match!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
   }
 
 ]

@@ -1,0 +1,9 @@
+[
+  {
+    "trigger": "Do you have any \d+x\d+ units?",
+    "template": "no lol",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  }
+]

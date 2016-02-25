@@ -1,0 +1,10 @@
+[
+  {
+    "trigger": "Hi",
+    "template": "Hey [[tenant.first_name]], how are you?",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  }
+
+]

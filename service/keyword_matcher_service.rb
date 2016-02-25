@@ -22,7 +22,8 @@ class KeywordMatcherService < Service
   #//
   end
 
-  def self.triggers_and_templates
+  def self.triggers_and_templates reload: false
+    @triggers_and_templates = nil if reload
     @triggers_and_templates ||= begin
       puts "Loading all triggers and templates"
       all_triggers_and_templates = []
