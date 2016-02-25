@@ -1,13 +1,13 @@
 [
   {
-    "trigger": "What's my name?",
+    "trigger": "what's my name",
     "template": "Your name is [[tenant.first_name]] [[tenant.last_name]].",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
-    "trigger": "What units am I in?",
+    "trigger": "what units am I in",
     "template": "You're in units X, Y, and Z.",
     "enabled": true,
     "context_restriction": null,

@@ -1,13 +1,13 @@
 [
   {
-    "trigger": "What facility is this?",
+    "trigger": "what facility is this",
     "template": "Hi! This is [[facility.name]].",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
-    "trigger": "What's your phone number?",
+    "trigger": "what's your phone number",
     "template": "You can reach us at [[facility.phone]] when we're open.",
     "enabled": true,
     "context_restriction": null,

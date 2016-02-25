@@ -1,13 +1,13 @@
 [
   {
-    "trigger": "I am your father",
+    "trigger": "i am your father",
     "template": "Yeah right, [[tenant.first_name]]! Then why isn't my last name [[tenant.last_name]], hmm?",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
-    "trigger": "I love you",
+    "trigger": "i love you",
     "template": "I love you too, [[tenant.first_name]].",
     "enabled": true,
     "context_restriction": null,

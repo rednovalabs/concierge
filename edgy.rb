@@ -67,3 +67,10 @@ post '/receive_sms' do
 
   response.to_xml
 end
+
+get '/help' do
+  content_type 'text/html'
+
+  regexes = KeywordMatcherService.triggers_and_templates.map { |r| "/#{r["trigger"]}/i --> #{r["template"]}" }
+  ["I respond to the following regex matches: <hr />"] << regexes.join("<br />")
+end

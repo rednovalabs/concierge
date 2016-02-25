@@ -6,7 +6,7 @@ class KeywordMatcherService < Service
 
       trigger_regex = regex_trigger_for response["trigger"]
       puts "Matching [#{message}] to [#{trigger_regex}]"
-      if !(message =~ trigger_regex).nil?
+      if !(message.downcase =~ trigger_regex).nil?
         puts "Found valid trigger! Using template: #{response['template']}"
         return response["template"]
       end
@@ -14,14 +14,6 @@ class KeywordMatcherService < Service
 
     # Catchall template
     "Sorry [[tenant.first_name]], but I don't know how to respond to that!"
-  end
-
-  private
-
-  def self.regex_trigger_for response
-    Regexp.new response
-  #rescue
-  #//
   end
 
   def self.triggers_and_templates reload: false
@@ -40,6 +32,14 @@ class KeywordMatcherService < Service
       puts "Loaded #{all_triggers_and_templates.count} triggers and templates"
       all_triggers_and_templates
     end
+  end
+
+  private
+
+  def self.regex_trigger_for response
+    Regexp.new response
+  #rescue
+  #//
   end
 
   def self.load_json_from_file filename

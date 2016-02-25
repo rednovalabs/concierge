@@ -1,20 +1,20 @@
 [
   {
-    "trigger": "Hi",
+    "trigger": "hi",
     "template": "Hey [[tenant.first_name]], how are you?",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
-    "trigger": "How old are you?",
+    "trigger": "how old are you",
     "template": "Something clever!",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
-    "trigger": "What's your name?",
+    "trigger": "what's your name",
     "template": "My name is [[bot.name]]. Pleased to meet you!",
     "enabled": true,
     "context_restriction": null,
