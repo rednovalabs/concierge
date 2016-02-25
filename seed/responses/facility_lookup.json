@@ -1,17 +1,53 @@
 [
   {
-    "trigger": "what facility is this",
+    "trigger": "what facility",
     "template": "Hi! This is [[facility.name]].",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
-    "trigger": "what's your phone number",
-    "template": "You can reach us at [[facility.phone]] when we're open.",
+    "trigger": "what[^?!\\.]+phone",
+    "template": "You can reach us at [[facility.phone]]. <<your hours>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "your hours",
+    "template": "We're open from [[facility.open_hour]]-[[facility.close_hour]], [[facility.open_days]].",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "when \\w+ open",
+    "template": "<<your hours>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "what[^?!\\.]+phone",
+    "template": "Our website is [[facility.public_url]].",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "what[^?!\\.]+email",
+    "template": "You can email us any time at [[facility.email]].",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "what[^?!\\.]+fax",
+    "template": "You can fax us any time at [[facility.fax]]. Just give us a call and let us know it's coming!",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   }
+
 
 ]

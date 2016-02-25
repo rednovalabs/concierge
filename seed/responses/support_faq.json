@@ -1,0 +1,10 @@
+[
+  {
+    "trigger": "the gate isn't working",
+    "template": "Sorry about that! I'll alert the facility manager immediately.",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  }
+
+]

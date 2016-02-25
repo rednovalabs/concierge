@@ -1,0 +1,38 @@
+[
+  {
+    "trigger": "what can you do",
+    "template": "You can ask me things like what the facility’s phone number is, when it’s open, what your gate code is, or even when your next balance is due!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "help",
+    "template": "<<what's your name>><<what can you do>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "what can i text you",
+    "template": "<<what can you do>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "what do you know",
+    "template": "<<what can you do>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "how do i use",
+    "template": "<<what can you do>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  }
+
+]

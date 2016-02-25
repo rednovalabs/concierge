@@ -68,25 +68,21 @@ post '/receive_sms' do
   response.to_xml
 end
 
-get '/help' do
+get '/customize' do
   content_type 'text/html'
 
   triggers_and_templates = KeywordMatcherService.triggers_and_templates.sort_by { |r| r["enabled"] ? 0 : 1 }
 
-  erb :help, locals: { triggers_and_templates: triggers_and_templates }
+  erb :customize, locals: { triggers_and_templates: triggers_and_templates }
 end
 
 post '/update_script' do
   content_type 'text/html'
 
-  puts params.inspect
-
   # Find the response being edited
   response = KeywordMatcherService.triggers_and_templates.detect do |r|
     %w(trigger template).all? { |x| r[x] == params[x]}
   end
-
-  puts "Found response: #{response}"
 
   # And edit it
   if response

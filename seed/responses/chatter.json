@@ -1,7 +1,7 @@
 [
   {
     "trigger": "hi",
-    "template": "Hey [[tenant.first_name]], how are you?",
+    "template": "Hey [[tenant.first_name]]!",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -14,8 +14,22 @@
     "set_context": null
   },
   {
+    "trigger": "yo",
+    "template": "<<hi>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "sup",
+    "template": "<<hi>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": "how old are you",
-    "template": "Something clever!",
+    "template": "I'm a robot, I don't have an age!",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -23,6 +37,20 @@
   {
     "trigger": "what's your name",
     "template": "My name is [[bot.name]]. Pleased to meet you!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "thanks",
+    "template": "You're welcome!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "thank you",
+    "template": "<<thanks>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null

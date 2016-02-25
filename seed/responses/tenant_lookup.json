@@ -8,7 +8,14 @@
   },
   {
     "trigger": "what units am I in",
-    "template": "You're in units X, Y, and Z.",
+    "template": "You're in unit [[tenant.unit_name]]",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "my gate code",
+    "template": "Your gate code is [[tenant.gate_code]].",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
