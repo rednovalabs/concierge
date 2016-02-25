@@ -71,13 +71,11 @@ end
 get '/help' do
   content_type 'text/html'
 
-  triggers_and_templates = KeywordMatcherService.triggers_and_templates
-
   response_table = [
-    "<table border='1'><tr>" + %w(Trigger Template Context Restriction).map { |h| "<th>#{h}</th>" }.join + "</tr>"
+    "<table border='1' width='100%'><tr>" + %w(Trigger Template Context Restriction Enabled?).map { |h| "<th>#{h}</th>" }.join + "</tr>"
   ]
-  triggers_and_templates.each do |response|
-    response_table << "<tr>" + %w(trigger template context_restriction set_context).map { |a| "<td>#{response[a]}</td>" }.join + "</tr>"
+  KeywordMatcherService.triggers_and_templates.each do |response|
+    response_table << "<tr>" + %w(trigger template context_restriction set_context enabled).map { |a| "<td>#{response[a]}</td>" }.join + "</tr>"
   end
 
   response_table.join
