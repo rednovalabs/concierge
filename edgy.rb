@@ -71,18 +71,17 @@ end
 get '/help' do
   content_type 'text/html'
 
-  triggers_and_templates = KeywordMatcherService.triggers_and_templates
+  triggers_and_templates = KeywordMatcherService.triggers_and_templates.sort_by { |r| r["enabled"] ? 0 : 1 }
+  responses = triggers_and_templates.collect do |response|
+    response = response.dup
 
-  response_table = [
-    "<table border='1' width='100%'><tr>" + %w(Trigger Template SetContext Restriction Enabled?).map { |h| "<th>#{h}</th>" }.join + "</tr>"
-  ]
-  triggers_and_templates.each do |response|
-    response = response.dup # Don't modify the original response objects
     response["trigger"] = "<strong>/</strong>#{response['trigger']}<strong>/</strong>"
-    response["template"].gsub!(TemplateReplacerService::TOKEN_REGEX) { |token| "<span style='color: #5ac74e'>#{token}</span>" }
+    response["template"] = response["template"].gsub(TemplateReplacerService::TOKEN_REGEX) do |token|
+      "<span style='color: #5ac74e'>#{token}</span>"
+    end
 
-    response_table << "<tr>" + %w(trigger template context_restriction set_context enabled).map { |a| "<td>#{response[a]}</td>" }.join + "</tr>"
+    response
   end
 
-  response_table.join
+  erb :help, locals: { triggers_and_templates: responses }
 end

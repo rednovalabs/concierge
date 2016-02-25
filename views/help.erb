@@ -1,0 +1,32 @@
+<style type="text/css">
+table {
+  width: 100%;
+}
+
+td {
+  border: 1px solid #888;
+}
+
+.disabled {
+  background: #ccc;
+}
+</style>
+
+<table>
+  <tr>
+    <th>Trigger</th>
+    <th>Template</th>
+    <th>SetContext</th>
+    <th>ContextRequirement</th>
+    <th>Enabled?</th>
+  </tr>
+  <% triggers_and_templates.each do |response| %>
+    <tr<%= ' class="disabled"' unless response["enabled"] %>>
+      <td><%= response["trigger"] %></td>
+      <td><%= response["template"] %></td>
+      <td><%= response["context_restriction"] %></td>
+      <td><%= response["set_context"] %></td>
+      <td><%= response["enabled"] %></td>
+    </tr>
+  <% end %>
+</table>
