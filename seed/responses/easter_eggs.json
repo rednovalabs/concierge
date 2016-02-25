@@ -16,7 +16,7 @@
   {
     "trigger": ".*",
     "template": "This should *never* match!",
-    "enabled": true,
+    "enabled": false,
     "context_restriction": null,
     "set_context": null
   }

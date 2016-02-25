@@ -2,6 +2,8 @@ class KeywordMatcherService < Service
 
   def self.match_to_template message
     triggers_and_templates.each do |response|
+      next unless response["enabled"]
+
       trigger_regex = regex_trigger_for response["trigger"]
       puts "Matching [#{message}] to [#{trigger_regex}]"
       if !(message =~ trigger_regex).nil?
