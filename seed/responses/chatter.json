@@ -70,7 +70,7 @@
     "set_context": null
   },
   {
-    "trigger": "what are you",
+    "trigger": "what are you\\b",
     "template": "<<what's your name>>",
     "enabled": true,
     "context_restriction": null,
