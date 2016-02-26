@@ -12,28 +12,28 @@
     "enabled": true,
     "context_restriction": null,
     "set_context": null
-  }
+  },
   {
     "trigger": "when can i move[ -]?in",
     "template": "Your move-in date is schedule for [[tenant.move_in_date]]",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
-  }
+  },
   {
     "trigger": "when'?s move[ -]?in day",
     "template": "<<when can i move[ -]?in>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
-  }
+  },
   {
     "trigger": "can i rent a unit",
     "template": "Of course! Right now we have sizes [[facility.unit_sizes_available]] available. Which size would you like?",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
-  }
+  },
   {
     "trigger": "can i rent another unit",
     "template": "<<can i rent a unit>>",

@@ -19,8 +19,8 @@ class Facility
       direct_phone: "(555) 411-1111",
       open_hour: '7AM',
       close_hour: '5PM',
-      open_days: 'M-F'
-      unit_sizes_available: '5x5, 5x10, 10x10, 10x20'
+      open_days: 'M-F',
+      unit_sizes_available: '5x5, 5x10, 10x10, 10x20',
     }
   end
 end

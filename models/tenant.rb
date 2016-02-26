@@ -19,8 +19,8 @@ class Tenant
       unit_name: 'B52',
       gate_code: '7201',
       balance_due: '$79.24',
-      balance_due_on: '3/1/16'
-      move_in_date: 'April 9, 2016'
+      balance_due_on: '3/1/16',
+      move_in_date: 'April 9, 2016',
     }
   end
 end
