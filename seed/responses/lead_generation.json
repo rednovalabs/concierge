@@ -91,6 +91,13 @@
     "set_context": "alert manager"
   },
   {
+    "trigger": "can i move[ -]?out",
+    "template": "<<when can i move[ -]?out>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": "when is my move[ -]? out day",
     "template": "<<when can i move[ -]?out>>",
     "enabled": true,
