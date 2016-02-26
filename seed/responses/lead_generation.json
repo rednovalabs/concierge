@@ -15,7 +15,7 @@
   },
   {
     "trigger": "goodbye me",
-    "template": "Thank you for renting with [[facility.name]]. We hope you had a wonderful experience. Feel free to text me in the future if you ever need to rent a storage unit again!", 
+    "template": "Thank you for renting with [[facility.name]]. We hope you had a wonderful experience. Feel free to text me in the future if you ever need to rent a storage unit again!",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -29,14 +29,14 @@
   },
   {
     "trigger": "when do i move[ -]?in",
-    "template": "<<when can i move[ -]?in>>",
+    "template": "<<when can i move in>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
     "trigger": "when'?s move[ -]?in day",
-    "template": "<<when can i move[ -]?in>>",
+    "template": "<<when can i move in>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -82,14 +82,14 @@
     "enabled": true,
     "context_restriction": null,
     "set_context": null
-  },  
+  },
   {
     "trigger": "when can i move[ -]?out",
     "template": "Hmm. You don't have a move-out scheduled. Would you like me to have the manager give you a call?",
     "enabled": true,
     "context_restriction": null,
     "set_context": "alert manager"
-  }
+  },
   {
     "trigger": "when is my move[ -]? out day",
     "template": "<<when can i move[ -]?out>>",

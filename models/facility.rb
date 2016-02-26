@@ -21,6 +21,7 @@ class Facility
       close_hour: '5pm',
       open_days: 'Monday through Friday',
       unit_sizes_available: '5x5, 5x10, 10x10, and 10x20',
+      directions: 'http://maps.google.com/?q=4830%20Rainbow%20Blvd%20Westwood%20KS'
     }
   end
 end

@@ -21,6 +21,13 @@
     "set_context": null
   },
   {
+    "trigger": "swing by",
+    "template": "We're open from [[facility.open_hour]]-[[facility.close_hour]], [[facility.open_days]].",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": "when \\w+ open",
     "template": "<<what are your hours>>",
     "enabled": true,
@@ -44,6 +51,27 @@
   {
     "trigger": "what[^?!\\.]+fax",
     "template": "You can fax us any time at [[facility.fax]]. Just give us a call and let us know it's coming!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "directions",
+    "template": "Click here to view directions to the facility: [[facility.directions]].",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "how.+get to",
+    "template": "<<directions>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "how.+get there",
+    "template": "<<directions>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null

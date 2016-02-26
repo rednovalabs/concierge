@@ -1,0 +1,9 @@
+[
+  {
+    "trigger": "unit needs cleaning",
+    "template": "Thanks for letting me know. I can't clean it myself, but I'll let a manager with arms know.",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  }
+]
