@@ -14,8 +14,22 @@
     "set_context": null
   },
   {
+    "trigger": "goodbye me",
+    "template": "Thank you for renting with [[facility.name]]. We hope you had a wonderful experience. Feel free to text me in the future if you ever need to rent a storage unit again!", 
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": "when can i move[ -]?in",
-    "template": "Your move-in date is schedule for [[tenant.move_in_date]]",
+    "template": "Your move-in date is scheduled for [[tenant.move_in_date]]. We'll see you soon!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "when do i move[ -]?in",
+    "template": "<<when can i move[ -]?in>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -35,10 +49,52 @@
     "set_context": null
   },
   {
+    "trigger": "5x10",
+    "template": "Perfect. What day would you like to move in?",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "may 1",
+    "template": "Great. I've reserved a 5x10 unit for you. Your move-in day is set for May 1. We'll see you soon!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "do you have any available units",
+    "template": "<<can i rent a unit>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "can i transfer to another unit",
+    "template": "Of course! ",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": "can i rent another unit",
     "template": "<<can i rent a unit>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
+  },  
+  {
+    "trigger": "when can i move[ -]?out",
+    "template": "Hmm. You don't have a move-out scheduled. Would you like me to have the manager give you a call?",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": "alert manager"
+  }
+  {
+    "trigger": "when is my move[ -]? out day",
+    "template": "<<when can i move[ -]?out>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": "alert manager"
   }
 ]

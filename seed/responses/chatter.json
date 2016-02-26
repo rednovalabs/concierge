@@ -49,6 +49,13 @@
     "set_context": null
   },
   {
+    "trigger": "how is your day",
+    "template": "<<how'?s your day",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": "what'?s your name",
     "template": "My name is [[bot.name]], a helpful chatbot for [[facility.name]]. Pleased to meet you!",
     "enabled": true,

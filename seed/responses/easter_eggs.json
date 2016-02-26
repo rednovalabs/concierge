@@ -21,6 +21,13 @@
     "set_context": null
   },
   {
+    "trigger": "who[']?s your favorite tenant",
+    "template": "Why, you are, of course! (Don't tell the other renters.)",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": ".*",
     "template": "This should *never* match!",
     "enabled": false,
