@@ -33,13 +33,6 @@
     "enabled": true,
     "context_restriction": null,
     "set_context": null
-  },
-  {
-    "trigger": "\\bwhen\\b.+\\bdue",
-    "template": "<<when is my balance due>>",
-    "enabled": true,
-    "context_restriction": null,
-    "set_context": null
   }
 
 ]
