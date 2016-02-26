@@ -73,7 +73,6 @@ get '/customize' do
   content_type 'text/html'
 
   triggers_and_templates = KeywordMatcherService.triggers_and_templates.sort_by { |r| r["enabled"] ? 0 : 1 }
-
   erb :customize, locals: { triggers_and_templates: triggers_and_templates }
 end
 

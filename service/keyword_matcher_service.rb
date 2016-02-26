@@ -7,9 +7,12 @@ class KeywordMatcherService < Service
       next unless response["enabled"]
 
       trigger_regex = regex_trigger_for response["trigger"]
-      #puts "Matching [#{message}] to [#{trigger_regex}]"
       if !(message.downcase =~ trigger_regex).nil?
-        #puts "Found valid trigger! Using template: #{response['template']}"
+        if response["context_restriction"]
+          next unless @context == response["context_restriction"]
+        end
+        @context = response["set_context"]
+
         full_template << response["template"] + ' '
       end
     end
@@ -38,6 +41,11 @@ class KeywordMatcherService < Service
       puts "Loaded #{all_triggers_and_templates.count} triggers and templates"
       all_triggers_and_templates
     end
+  end
+
+  def self.context
+    #todo per-user
+    @context
   end
 
   private

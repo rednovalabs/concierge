@@ -1,6 +1,6 @@
 [
   {
-    "trigger": "do you have any \\d+x\\d+ units",
+    "trigger": "have any \\d+x\\d+ units",
     "template": "no lol",
     "enabled": false,
     "context_restriction": null,

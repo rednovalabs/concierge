@@ -22,7 +22,7 @@
   },
   {
     "trigger": "when \\w+ open",
-    "template": "<<your hours>>",
+    "template": "<<what are your hours>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -48,6 +48,4 @@
     "context_restriction": null,
     "set_context": null
   }
-
-
 ]

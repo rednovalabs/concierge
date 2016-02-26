@@ -36,7 +36,7 @@
   },
   {
     "trigger": "how old are you",
-    "template": "I'm a robot, I don't have an age!",
+    "template": "About three days old. I'm pretty smart for my age, though!",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -79,6 +79,20 @@
   {
     "trigger": "what.+doing",
     "template": "<<whats up>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "where.+you",
+    "template": "I live in one of the units at [[facility.name]].",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "are you.+",
+    "template": "I am whatever you want to believe I am.",
     "enabled": true,
     "context_restriction": null,
     "set_context": null

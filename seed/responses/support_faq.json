@@ -1,10 +1,17 @@
 [
   {
     "trigger": "the gate isn't working",
-    "template": "Sorry about that! I'll alert the facility manager immediately.",
+    "template": "Sorry about that! I'll alert the manager immediately!",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
+  },
+  {
+    "trigger": "i can'?t",
+    "template": "Sorry about that! Would you like me to alert a manager?",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": "alert manager"
   },
   {
     "trigger": "can I pay by",
@@ -12,5 +19,57 @@
     "enabled": true,
     "context_restriction": null,
     "set_context": null
+  },
+  {
+    "trigger": "do you take",
+    "template": "We can take payments in person at [[facility.address]], on the phone at [[facility.phone]], or online.",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+
+  {
+    "trigger": "yes",
+    "template": "Okay, I'll do that right away!",
+    "enabled": true,
+    "context_restriction": "alert manager",
+    "set_context": ""
+  },
+  {
+    "trigger": "ok",
+    "template": "<<yes>>",
+    "enabled": true,
+    "context_restriction": "alert manager",
+    "set_context": null
+  },
+  {
+    "trigger": "yeah",
+    "template": "<<yes>>",
+    "enabled": true,
+    "context_restriction": "alert manager",
+    "set_context": null
+  },
+  {
+    "trigger": "sure",
+    "template": "<<yes>>",
+    "enabled": true,
+    "context_restriction": "alert manager",
+    "set_context": null
+  },
+  {
+    "trigger": "no",
+    "template": "Okay, I won't do that.",
+    "enabled": true,
+    "context_restriction": "alert manager",
+    "set_context": ""
+  },
+  {
+    "trigger": "nah",
+    "template": "Okay, I won't do that.",
+    "enabled": true,
+    "context_restriction": "alert manager",
+    "set_context": ""
   }
+
+
 ]
