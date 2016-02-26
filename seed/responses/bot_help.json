@@ -1,13 +1,13 @@
 [
   {
-    "trigger": "what can you do",
-    "template": "You can ask me things like what the facility’s phone number is, when it’s open, what your gate code is, or even when your next balance is due!",
+    "trigger": "what can [you]+ do",
+    "template": "You can ask me for the facility's phone number and office hours, what your gate code is, or even when your next balance is due!",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
-    "trigger": "can you answer",
+    "trigger": "can [you]+ answer",
     "template": "<<what can you do>>",
     "enabled": true,
     "context_restriction": null,
@@ -21,14 +21,14 @@
     "set_context": null
   },
   {
-    "trigger": "what can i text you",
+    "trigger": "what can i text [you]+",
     "template": "<<what can you do>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
   },
   {
-    "trigger": "what do you know",
+    "trigger": "what do [you]+ know",
     "template": "<<what can you do>>",
     "enabled": true,
     "context_restriction": null,

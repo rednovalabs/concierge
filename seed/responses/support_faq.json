@@ -15,7 +15,7 @@
   },
   {
     "trigger": "can i pay by",
-    "template": "We can take payments in person at [[facility.address]], on the phone at [[facility.phone]], or online.",
+    "template": "We can take payments in person at [[facility.address]], on the phone at [[facility.phone]], or online at [[facility.public_url]].",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -29,7 +29,7 @@
   },
   {
     "trigger": "do you take",
-    "template": "We can take payments in person at [[facility.address]], on the phone at [[facility.phone]], or online.",
+    "template": "We can take payments in person at [[facility.address]], on the phone at [[facility.phone]], or online at [[facility.public_url]].",
     "enabled": true,
     "context_restriction": null,
     "set_context": null

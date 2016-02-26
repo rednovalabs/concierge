@@ -1,7 +1,7 @@
 [
   {
     "trigger": "\\bhi\\b",
-    "template": "Hey [[tenant.first_name]]!",
+    "template": "Hey [[tenant.first_name]]! What can I help you with?",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -42,8 +42,29 @@
     "set_context": null
   },
   {
-    "trigger": "what's your name",
-    "template": "My name is [[bot.name]]. Pleased to meet you!",
+    "trigger": "how'?s your day",
+    "template": "My day is great now that I'm talking to you!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "what'?s your name",
+    "template": "My name is [[bot.name]], a helpful chatbot for [[facility.name]]. Pleased to meet you!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "who are you",
+    "template": "<<what's your name>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "what are you",
+    "template": "<<what's your name>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
