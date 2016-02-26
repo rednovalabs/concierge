@@ -5,5 +5,12 @@
     "enabled": false,
     "context_restriction": null,
     "set_context": null
+  },
+  {
+    "trigger": "welcome me",
+    "template": "Welcome to [[facility.name]], [[tenant.first_name]]! I'm [[bot.name]] and I'm here to help you -- just text me any time with any questions you have, and I'll do my best to answer you!",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
   }
 ]

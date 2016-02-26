@@ -1,6 +1,6 @@
 [
   {
-    "trigger": "the gate isn't working",
+    "trigger": "gate.+working",
     "template": "Sorry about that! I'll alert the manager immediately!",
     "enabled": true,
     "context_restriction": null,
@@ -14,8 +14,15 @@
     "set_context": "alert manager"
   },
   {
-    "trigger": "can I pay by",
+    "trigger": "can i pay by",
     "template": "We can take payments in person at [[facility.address]], on the phone at [[facility.phone]], or online.",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "can i pay over",
+    "template": "<<can i pay by>>",
     "enabled": true,
     "context_restriction": null,
     "set_context": null

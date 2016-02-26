@@ -11,7 +11,7 @@ class KeywordMatcherService < Service
         if response["context_restriction"]
           next unless @context == response["context_restriction"]
         end
-        @context = response["set_context"]
+        @context = response["set_context"] if response["set_context"]
 
         full_template << response["template"]
       end

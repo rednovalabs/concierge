@@ -71,7 +71,7 @@
   },
   {
     "trigger": "what'?s up",
-    "template": "Not much, just hanging around [[facility.name]] and helping friends out.",
+    "template": "Not much, just hanging around [[facility.name]] and helping out where I can.",
     "enabled": true,
     "context_restriction": null,
     "set_context": null
@@ -93,6 +93,20 @@
   {
     "trigger": "are you.+",
     "template": "I am whatever you want to believe I am.",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "favorite color",
+    "template": "My favorite color is fuschia.",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": ":\\)",
+    "template": ":)",
     "enabled": true,
     "context_restriction": null,
     "set_context": null

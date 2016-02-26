@@ -7,13 +7,6 @@
     "set_context": "next payment"
   },
   {
-    "trigger": "how much",
-    "template": "<<what is my balance>>",
-    "enabled": false,
-    "context_restriction": "next payment",
-    "set_context": null
-  },
-  {
     "trigger": "\\bwhen\\b.+\\bbalance\\b",
     "template": "Your next payment is due on [[tenant.balance_due_on]].",
     "enabled": true,

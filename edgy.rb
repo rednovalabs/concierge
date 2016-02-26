@@ -41,12 +41,7 @@ get '/welcome' do
 
   return "No ?phone param" unless params.key? 'phone'
 
-  welcome_template = [
-    "Welcome to [[facility.name]], [[tenant.first_name]]!",
-    "I'm [[bot.name]] and I'm here to help you --",
-    "just text me any time with any questions you have,",
-    "and I'll do my best to answer you!"
-  ].join ' '
+  welcome_template = "<<welcome me>>"
   replaced_template = TemplateReplacerService.replace_replacements welcome_template
   sanitized_response = SanitizerService.sanitize_for_sms replaced_template
 

@@ -28,7 +28,7 @@
     "set_context": null
   },
   {
-    "trigger": "what[^?!\\.]+phone",
+    "trigger": "what[^?!\\.]+website",
     "template": "Our website is [[facility.public_url]].",
     "enabled": true,
     "context_restriction": null,
