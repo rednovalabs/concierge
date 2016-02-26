@@ -68,6 +68,20 @@
     "enabled": true,
     "context_restriction": null,
     "set_context": null
+  },
+  {
+    "trigger": "what'?s up",
+    "template": "Not much, just hanging around [[facility.name]] and helping friends out.",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
+    "trigger": "what.+doing",
+    "template": "<<whats up>>",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
   }
 
 ]

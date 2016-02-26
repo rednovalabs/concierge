@@ -16,7 +16,7 @@ class KeywordMatcherService < Service
 
     if full_template.empty?
       # Catchall template
-      "Sorry [[tenant.first_name]], but I don't know how to respond to that!"
+      "Sorry [[tenant.first_name]], but I didn't understand your question. <<what can you do>>"
     else
       full_template
     end

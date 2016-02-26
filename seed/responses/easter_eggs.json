@@ -14,6 +14,13 @@
     "set_context": null
   },
   {
+    "trigger": "fuck you",
+    "template": "I'm sorry :(",
+    "enabled": true,
+    "context_restriction": null,
+    "set_context": null
+  },
+  {
     "trigger": ".*",
     "template": "This should *never* match!",
     "enabled": false,
