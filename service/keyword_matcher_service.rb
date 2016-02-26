@@ -1,7 +1,7 @@
 class KeywordMatcherService < Service
 
   def self.match_to_template message
-    full_template = ""
+    full_template = []
 
     triggers_and_templates.each do |response|
       next unless response["enabled"]
@@ -13,7 +13,7 @@ class KeywordMatcherService < Service
         end
         @context = response["set_context"]
 
-        full_template << response["template"] + ' '
+        full_template << response["template"]
       end
     end
 
@@ -21,7 +21,7 @@ class KeywordMatcherService < Service
       # Catchall template
       "Sorry [[tenant.first_name]], but I didn't understand your question. <<what can you do>>"
     else
-      full_template
+      full_template.compact.uniq.join ' '
     end
   end
 
