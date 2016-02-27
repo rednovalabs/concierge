@@ -119,7 +119,7 @@
     "set_context": null
   },
   {
-    "trigger": "are you.+",
+    "trigger": "^are you.+",
     "template": "I am whatever you want to believe I am.",
     "enabled": true,
     "context_restriction": null,

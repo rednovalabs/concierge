@@ -9,7 +9,7 @@ class Facility
     {
       name: "Red Nova Stor",
       phone: "(555) 123-4567",
-      address: "4831 Rainbow Blvd.",
+      address: "4831 Rainbow Blvd",
       time_zone: "Eastern Time (US & Canada)",
       company_id: 213,
       public_url: "http://www.rednovalabs.com",
